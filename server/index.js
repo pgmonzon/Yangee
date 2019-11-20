@@ -2,9 +2,10 @@
 // (C) Yangee
 // 
 
+const config = require('./config/config');
 const grpc = require('grpc');
 global.Mongoose = require('mongoose');
-Mongoose.connect('mongodb://yngRldd:laser1962@198.100.45.12:27017/yangeeReloaded');
+Mongoose.connect(config.database);
 
 const proto = grpc.load('proto/employees.proto');
 const server = new grpc.Server();
