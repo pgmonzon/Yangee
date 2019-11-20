@@ -2,12 +2,17 @@
 // (C) Yangee
 // 
 
-const config = require('./config/config');
-const grpc = require('grpc');
-global.Mongoose = require('mongoose');
-Mongoose.connect(config.database);
+// replace - const notesProto = grpc.load('notes.proto');
+// to
 
-const proto = grpc.load('proto/employees.proto');
+const config = require('./config/config');
+global.Mongoose = require('mongoose');
+Mongoose.connect(config.database, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+
+const grpc = require('grpc')
+const protoLoader = require('@grpc/proto-loader')
+const packageDefinition = protoLoader.loadSync('proto/employees.proto');
+const proto = grpc.loadPackageDefinition(packageDefinition);
 const server = new grpc.Server();
 const employeeServices = require('../db/employees')
 
