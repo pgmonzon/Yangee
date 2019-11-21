@@ -2,9 +2,6 @@
 // (C) Yangee
 // 
 
-// replace - const notesProto = grpc.load('notes.proto');
-// to
-
 const config = require('./config/config');
 global.Mongoose = require('mongoose');
 Mongoose.connect(config.database, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
@@ -14,7 +11,7 @@ const protoLoader = require('@grpc/proto-loader')
 const packageDefinition = protoLoader.loadSync('proto/employees.proto');
 const proto = grpc.loadPackageDefinition(packageDefinition);
 const server = new grpc.Server();
-const employeeServices = require('../db/employees')
+const employeeServices = require('../db/employees');
 
 //define the callable methods that correspond to the methods defined in the protofile
 server.addService(proto.employees.EmployeesService.service, {
