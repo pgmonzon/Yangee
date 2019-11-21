@@ -2,9 +2,6 @@
 // (C) Yangee
 // 
 
-// replace - const notesProto = grpc.load('notes.proto');
-// to
-
 const config = require('./config/config');
 global.Mongoose = require('mongoose');
 Mongoose.connect(config.database, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
