@@ -1,3 +1,3 @@
 module.exports = {
-    'database': 'mongodb://yngRldd:laser1962@198.100.45.12:27017/yangeeReloaded',
+    'database': 'mongodb://yngAPItoDB:Gunb04t55!@localhost:27017/yng',
 };
