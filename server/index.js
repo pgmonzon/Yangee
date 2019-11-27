@@ -2,16 +2,23 @@
 // (C) Yangee
 // 
 
+// Required
 const config = require('./config/config');
 global.Mongoose = require('mongoose');
-Mongoose.connect(config.database, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+
+// Database connect
+Mongoose.connect(config.database, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+    .then(db => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB error'));
 
 const grpc = require('grpc')
 const protoLoader = require('@grpc/proto-loader')
 const packageDefinition = protoLoader.loadSync('proto/employees.proto');
+
 const proto = grpc.loadPackageDefinition(packageDefinition);
 const server = new grpc.Server();
 const employeeServices = require('../db/employees');
+const userServices = require('../db/users');
 
 //define the callable methods that correspond to the methods defined in the protofile
 server.addService(proto.employees.EmployeesService.service, {
@@ -51,4 +58,6 @@ server.bind('0.0.0.0:50050', grpc.ServerCredentials.createInsecure());
 
 //Start the server
 server.start();
-console.log('grpc server running on port:', '0.0.0.0:50050');
+console.log('');
+console.log('-------------------------------------------')
+console.log('Yangee gRPC server:', '0.0.0.0:50050');
