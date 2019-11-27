@@ -15,42 +15,42 @@ client.EmployeeInsert({
     if (
         !error
     ) {
-        console.log("Response : ", response)
+        console.log("Response Insert Employee : ", response)
     }
     else {
-        console.log("Error:", error.message);
+        console.log("Error Insert Employee: ", error.message);
     }
 });
 
 client.EmployeesList({}, (error, response) => {
     if (!error) {
-        console.log("Response : ", response)
+        console.log("Response List Employee: ", response)
     }
     else {
-        console.log("Error:", error.message);
+        console.log("Error List Employee: ", error.message);
     }
 });
 
 client.UserInsert({
-    user: "patricio",
+    user: "patricio01",
     password: "laser",
     email: "pgmonzon@gmail.com"
 }, (error, response) => {
     if (
         !error
     ) {
-        console.log("Response : ", response)
+        console.log("Response Insert User: ", response)
     }
     else {
-        console.log("Error:", error.message);
+        console.log("Error Insert User: ", error.message);
     }
 });
 
 client.UsersList({}, (error, response) => {
     if (!error) {
-        console.log("Response : ", response)
+        console.log("Response List User: ", response)
     }
     else {
-        console.log("Error:", error.message);
+        console.log("Error List User: ", error.message);
     }
 });
