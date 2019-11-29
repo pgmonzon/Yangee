@@ -26,7 +26,7 @@ message Employee {
 }
 
 message EmployeeList {
-  repeated Employee employee = 1;
+  repeated Employee employees = 1;
 }
 
 // Users
@@ -37,5 +37,5 @@ message User {
 }
 
 message UserList {
-  repeated User user = 1;
+  repeated User users = 1;
 }

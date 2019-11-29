@@ -10,7 +10,6 @@ const protoLoader = require('@grpc/proto-loader');
 const employeeDBServices = require('../db/employees');
 const userDBServices = require('../db/users');
 
-
 // Database connect
 Mongoose.connect(config.database, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
     .then(db => console.log('MongoDB connected'))

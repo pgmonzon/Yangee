@@ -1,12 +1,13 @@
 const grpc = require('grpc');
 
 const protoPath = require('path').join(__dirname, '../..', 'proto');
-//console.log("proto path : ", protoPath)
+// console.log("proto path : ", protoPath)
 const proto = grpc.load({ root: protoPath, file: 'yng.proto' });
 
 //Create a new client instance that binds to the IP and port of the grpc server.
 const client = new proto.yangee.YngServices('localhost:50050', grpc.credentials.createInsecure());
 
+/*
 client.EmployeeInsert({
     employee_id: parseInt(Math.random() * 1000000),
     name: "Amulya Kashyap",
@@ -21,7 +22,7 @@ client.EmployeeInsert({
         console.log("Error Insert Employee: ", error.message);
     }
 });
-
+*/
 client.EmployeesList({}, (error, response) => {
     if (!error) {
         console.log("Response List Employee: ", response)
@@ -31,6 +32,7 @@ client.EmployeesList({}, (error, response) => {
     }
 });
 
+/*
 client.UserInsert({
     user: "patricio01",
     password: "laser",
@@ -45,7 +47,7 @@ client.UserInsert({
         console.log("Error Insert User: ", error.message);
     }
 });
-
+*/
 client.UsersList({}, (error, response) => {
     if (!error) {
         console.log("Response List User: ", response)
