@@ -28,7 +28,7 @@ const proto = grpc.loadPackageDefinition(packageDefinition);
 const server = new grpc.Server();
 
 //define the callable methods that correspond to the methods defined in the protofile
-server.addService(proto.yangee.YngServices.service, {
+server.addService(proto.YngServices.service, {
     // Employees
     EmployeesList(call, callback) {
         employeeDBServices.list(callback);

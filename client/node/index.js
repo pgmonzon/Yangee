@@ -5,7 +5,7 @@ const protoPath = require('path').join(__dirname, '../..', 'proto');
 const proto = grpc.load({ root: protoPath, file: 'yng.proto' });
 
 //Create a new client instance that binds to the IP and port of the grpc server.
-const client = new proto.yangee.YngServices('localhost:50050', grpc.credentials.createInsecure());
+const client = new proto.YngServices('localhost:50050', grpc.credentials.createInsecure());
 
 /*
 client.EmployeeInsert({
