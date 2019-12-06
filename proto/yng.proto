@@ -4,8 +4,8 @@ syntax = "proto3";
 // ********
 service YngServices {
     // Employees
-    rpc EmployeesList (Empty) returns (EmployeeList);
-    rpc EmployeeInsert (Employee) returns (Empty);
+    //rpc EmployeesList (Empty) returns (EmployeeList);
+    //rpc EmployeeInsert (Employee) returns (Empty);
 
     // Users
     rpc UsersList (Empty) returns (UserList);
@@ -17,15 +17,15 @@ service YngServices {
 message Empty {}
 
 // Employees
-message Employee {
-  int32 employee_id = 1;
-  string email = 2;
-  string name = 3;
-}
+//message Employee {
+//  int32 employee_id = 1;
+//  string email = 2;
+//  string name = 3;
+//}
 
-message EmployeeList {
-  repeated Employee employees = 1;
-}
+//message EmployeeList {
+//  repeated Employee employee = 1;
+//}
 
 // Users
 message User {
