@@ -25,7 +25,8 @@ function getServer() {
        * Usuarios
        */
       UserInsert: users.UserInsert,
-      UsersList: users.UsersList
+      UsersList: users.UsersList,
+      UserLogin: users.UserLogin
     });
     return server;
 }
