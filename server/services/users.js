@@ -6,6 +6,7 @@
 * Required
 */
 const bcrypt = require('bcrypt');
+const i18n = require('i18n');
 
 const config = require('../config/config');
 const userModel = require('../../models/user');
@@ -36,7 +37,10 @@ async function UserInsert(call, callback) {
  * @param {} _ El primer parámetro vacío
  * @param {function(Error, User)} callback La lista de los usuarios o el error
  */
-async function UsersList(_, callback) {
+async function UsersList(call, callback) {
+    // Valida el token
+    jwt.validateJWT(call, true, true, (err, _) => {if (err) {callback(err);}});
+
     try {
         let usrs = await userModel.find();
         callback(null, { users: usrs });
@@ -51,12 +55,13 @@ async function UsersList(_, callback) {
  * @param {function(Error, User)} callback El usuario logueado o el error
  */
 async function UserLogin(call, callback) {
+    // Valida el token
+    jwt.validateJWT(call, false, false, (err, _) => { if (err) { callback(err); } });
+
     var err = new Error();
-    console.log(call.request);
-    console.log(call.metadata._internal_repr.authorization.toString());
 
     if (!call.request.user || !call.request.password) {
-        err.message = 'Los campos usuario y clave no pueden estar vacíos';
+        err.message = i18n.__('EmptyUserAndPassMessage');
         err.name = config.solutionErrorName;
         callback(err);
     }
@@ -73,7 +78,7 @@ async function UserLogin(call, callback) {
 
             callback(null, usrLogued);
         } else {
-            err.message = 'Acceso Denegado';
+            err.message = i18n.__('AccessDenied');
             err.name = config.solutionErrorName;
             callback(err);
         }

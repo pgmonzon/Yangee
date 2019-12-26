@@ -8,4 +8,5 @@ module.exports = {
     'algorithm': 'RS256',
     'keyPassphrase': 'yangee1962',
     'privatePathKey': 'C:/Users/pgmon/Google Drive/Yangee/Solution/back/server/config/keys/private.key',
+    'publicPathKey': 'C:/Users/pgmon/Google Drive/Yangee/Solution/back/server/config/keys/public.key',
 };

@@ -7,10 +7,9 @@ var proto = grpc.loadPackageDefinition(packageDefinition);
 const client = new proto.YngServices('localhost:50050', grpc.credentials.createInsecure());
 
 const meta = createMeta({
-    authorization: 'Bearer: 1234567890'
+    authorization: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZmE5MzM0YjI5ODA4M2JmYzJmYTMxMiIsInVzZXIiOiJwYXRyaWNpbzM0IiwiZW1haWwiOiJwZ21vbnpvbkBnbWFpbC5jb20ifSwiaWF0IjoxNTc3MzEyOTE5LCJleHAiOjE1NzczNTYxMTl9.QLUrZS6gm7Fxz2RErpi1ZfCzha5yh6XsmQBDrEkyqt9eQhM6RU23cHM-LWG5V6Wv1wBYm3Ernr7U0BXuXwg8Tw',
+    locale: 'es'
 });
-
-console.dir(meta.getMap());
 
 /*
 client.UserInsert({
@@ -25,8 +24,8 @@ client.UserInsert({
         console.log("Error Insert User: ", error.details);
     }
 });
-
-client.UsersList({}, (error, response) => {
+*/
+client.UsersList({}, meta, (error, response) => {
     if (!error) {
         console.log("Response List Users: ", response)
     }
@@ -34,7 +33,7 @@ client.UsersList({}, (error, response) => {
         console.log("Error List Users: ", error.details);
     }
 });
-*/
+/*
 client.UserLogin({
     user: "patricio34",
     password: "laser"
@@ -46,3 +45,4 @@ client.UserLogin({
         console.log("Error Login: ", error.details);
     }
 });
+*/

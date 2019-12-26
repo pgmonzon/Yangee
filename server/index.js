@@ -8,6 +8,16 @@
 const mongo = require('./helpers/mongo');
 const grpc = require('grpc');
 const grpcServer = require('./helpers/grpcServer');
+var i18n = require('i18n');
+
+/**
+ * Traducción
+ */
+i18n.configure({
+    locales: ['es', 'en', 'fr', 'pt'],
+    directory: __dirname + '/locales',
+    defaultLocale: 'es'
+});
 
 /**
  * Conecta la base de datos Mongo
@@ -26,4 +36,4 @@ server.bind('0.0.0.0:50050', grpc.ServerCredentials.createInsecure());
 server.start();
 console.log('');
 console.log('-------------------------------------------')
-console.log('Yangee gRPC server:', '0.0.0.0:50050');
+console.log(i18n.__('YangeeServer'), '0.0.0.0:50050');
