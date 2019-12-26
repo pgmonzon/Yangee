@@ -1,4 +1,4 @@
-#  Yangee nodejs grpc api
+#  Yangee solution nodejs / Angular
 
 ## Guía para arrancar el server
 
