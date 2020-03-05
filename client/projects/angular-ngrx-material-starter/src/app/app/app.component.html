@@ -59,15 +59,6 @@
             <fa-icon icon="cog"></fa-icon>
           </button>
 
-          <a [matTooltip]="'anms.header.github' | translate"
-             matTooltipPosition="before"
-             mat-icon-button
-             class="link d-none d-sm-inline"
-             href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-             target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-
           <span *ngIf="language$ | async as language">
             <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
               <mat-option *ngFor="let l of languages" [value]="l">
