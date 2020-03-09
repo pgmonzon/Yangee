@@ -32,7 +32,12 @@ export class AppComponent implements OnInit {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../../assets/logo.png');
-  languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
+  languages = [
+    { value: 'es', label: 'Español' },
+    { value: 'pt-br', label: 'Português' },
+    { value: 'en', label: 'English' },
+    { value: 'fr', label: 'Français' }
+  ];
   navigation = [
     { link: 'about', label: 'anms.menu.about' },
     { link: 'feature-list', label: 'anms.menu.features' },

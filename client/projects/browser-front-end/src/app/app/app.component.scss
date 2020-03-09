@@ -51,8 +51,9 @@ mat-sidenav-container {
 
     mat-select {
       margin: 0 0 0 20px;
-      width: 40px;
-      font-size: 14px;
+      margin-right: 10px;
+      width: 75px;
+      font-size: 12px;
     }
 
     @media (max-width: map-get($grid-breakpoints, lg)) {

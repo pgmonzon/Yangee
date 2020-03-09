@@ -15,7 +15,7 @@
                         (selectionChange)="onLanguageSelect($event)"
                         name="language">
               <mat-option *ngFor="let l of languages" [value]="l.value">
-                {{ 'anms.settings.general.language.' + l.label | translate }}
+                {{ l.label }}
               </mat-option>
             </mat-select>
           </mat-form-field>
