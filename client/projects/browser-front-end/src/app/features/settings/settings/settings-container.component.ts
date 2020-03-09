@@ -33,14 +33,10 @@ export class SettingsContainerComponent implements OnInit {
   ];
 
   languages = [
-    { value: 'en', label: 'en' },
-    { value: 'de', label: 'de' },
-    { value: 'sk', label: 'sk' },
-    { value: 'fr', label: 'fr' },
-    { value: 'es', label: 'es' },
-    { value: 'pt-br', label: 'pt-br' },
-    { value: 'zh-cn', label: 'zh-cn' },
-    { value: 'he', label: 'he' }
+    { value: 'es', label: 'Español' },
+    { value: 'pt-br', label: 'Português' },
+    { value: 'en', label: 'English' },
+    { value: 'fr', label: 'Français' }
   ];
 
   constructor(private store: Store<State>) {}
