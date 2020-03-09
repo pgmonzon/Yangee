@@ -1,0 +1,10 @@
+{
+    "YangeeServer": "Yangee Server à: ",
+    "MongoDBConnected": "MongoDB connecté",
+    "MongoDBError": "MongoDB erreur",
+    "InvalidToken": "Jeton non valide",
+    "AuthenticationRequired": "Afin d'autoriser l'authentification, il est nécessaire",
+    "PermissionRequired": "Vous n'êtes pas autorisé à accéder",
+    "EmptyUserAndPassMessage": "Les champs utilisateur et mot de passe ne peuvent pas être vides",
+    "AccessDenied": "Accès refusé"
+}
