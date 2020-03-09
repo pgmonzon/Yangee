@@ -111,7 +111,8 @@
             <br class="d-block d-sm-none">
             <a [matTooltip]="'anms.footer.changelog' | translate"
                matTooltipPosition="before"
-               href="https://github.com/tomastrajan/browser-front-end/blob/master/CHANGELOG.md">
+               href="https://github.com/tomastrajan/browser-front-end/blob/master/CHANGELOG.md"
+               class="footer-version">
               <fa-icon icon="rocket"></fa-icon>
               {{version}} <span *ngIf="!isProd">[{{envName}}]</span>
             </a>
